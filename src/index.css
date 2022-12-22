@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  background-color: #fffffe;
+  height: 100vh;
+}
+
+.typewriter {
+  font-size: 30px;
+}
