@@ -1,24 +1,26 @@
-import { React, useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import Blog from './Blog';
+import Grid from '@mui/material/Grid';
 
-function Blogs() {
-  const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@lauragonzalez0319";
-  const [blogs, setBlogs] = useState(null);
+function Blogs({  blogs, colorPicked }) {
+  const blogCards = () => {
+    if (blogs !== null) {
+      return blogs.map((blog) => (
+        <Grid item>
+          <Blog key={blog.title} title = {blog.title} image={blog.thumbnail} link={blog.link} colorPicked={colorPicked} />
+        </Grid>
+          
+      ))
+    }
+  } 
 
-  console.log("hey");
-  
-  useEffect(() => {
-    console.log("hi");
-    axios.get(mediumUrl)
-    .then(blogs => {
-      console.log("hi 2")
-      setBlogs(blogs)
-      console.log(blogs)
-    })
-  }, [])
 
   return (
-    <div>Blogs</div>
+    <div>
+      <Grid container direction="column" rowSpacing={3} justifyContent="center" alignItems="center">
+        {blogCards()}
+      </Grid>
+    </div>
   )
 }
 

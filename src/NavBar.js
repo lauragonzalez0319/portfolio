@@ -20,7 +20,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Typewriter from 'typewriter-effect';
 
-function NavBar() {
+function NavBar({ colorPicked }) {
+  console.log(colorPicked)
+  const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+
   const pages = [
     {name: 'Home', link: "home"}, 
     {name: 'About', link: "about"},
@@ -29,7 +32,7 @@ function NavBar() {
     {name: 'Contact', link: "contact"}
   ]; 
   
-  const drawerWidth = 90;
+  const drawerWidth = 77;
 
   const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -49,18 +52,12 @@ function NavBar() {
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: "#0f0e17" }}>
+      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1, backgroundColor: colorPicked }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <div className="typewriter">
-        <Typewriter
-          onInit={(typewriter)=> {
-          typewriter
-          .typeString("Hi, I'm Laura and I'm a Fullstack Software Engineer.")
-          .start();
-          }}
-        />
-        </div>
+        <Typography variant="h4">
+          LAURA GONZALEZ
+        </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -100,10 +97,12 @@ function NavBar() {
           >
             {pages.map((page) => (
               <Button
+                className="glow-on-hover"
                 key={page.name}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: "inline", fontSize: '1.5em', padding: '1em', textTransform: "capitalize" }}
                 href={page.link}
+                style={{backgroundColor: colorPicked}}
               >
                 {page.name}
               </Button>
@@ -112,35 +111,38 @@ function NavBar() {
         </Toolbar>
       </Container>
     </AppBar>
+    <Offset />
     <Drawer
       variant="permanent"
       sx={{
       width: drawerWidth,
       flexShrink: 0,
-      [`& .MuiDrawer-paper`]: { width: drawerWidth, height: "25%", marginTop: "25%", backgroundColor: "#0f0e17"},
+      [`& .MuiDrawer-paper`]: { width: drawerWidth, height: "30%", marginTop: "20%", backgroundColor: colorPicked},
      }}
    >
      <Toolbar />
-     <Box sx={{ overflow: 'auto' }}>
+     <Box sx={{ overflow: 'hidden'}}>
        <List>
            <ListItem disablePadding>
-             <ListItemButton>
+             <ListItemButton href={'https://www.linkedin.com/in/lauragonzalez0319/'} target="_blank" rel="noreferrer" className="glow-on-hover">
                <ListItemIcon>
-                <LinkedInIcon sx={{fontSize: 40, color: "white", backgroundColor: "#0f0e17"}}/>
+                <LinkedInIcon sx={{fontSize: 40, color: "white"}}/>
                </ListItemIcon>
              </ListItemButton>
            </ListItem>
+           <br/>
            <ListItem disablePadding>
-             <ListItemButton>
-               <ListItemIcon>
-                <GitHubIcon sx={{fontSize: 40, color: "white", backgroundColor: "#0f0e17"}}/>
-               </ListItemIcon>
+             <ListItemButton href={'https://github.com/lauragonzalez0319'} target="_blank" rel="noreferrer" className="glow-on-hover">
+                <ListItemIcon>
+                  <GitHubIcon sx={{fontSize: 40, color: "white", backgroundColor: "black"}}/>
+                </ListItemIcon>
              </ListItemButton>
            </ListItem>
+           <br/>
            <ListItem disablePadding>
-             <ListItemButton>
+             <ListItemButton href={'https://medium.com/@lauragonzalez0319'} target="_blank" rel="noreferrer" className="glow-on-hover">
                <ListItemIcon>
-                <MenuBookIcon sx={{fontSize: 40, color: "white", backgroundColor: "#0f0e17"}}/>
+                <MenuBookIcon sx={{fontSize: 40, color: "white", backgroundColor: "black"}}/>
                </ListItemIcon>
              </ListItemButton>
            </ListItem>
