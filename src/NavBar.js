@@ -25,7 +25,7 @@ function NavBar({ colorPicked }) {
   const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
   const pages = [
-    {name: 'Home', link: "home"}, 
+    {name: 'Home', link: "/"}, 
     {name: 'About', link: "about"},
     {name: 'Projects', link: "projects"},
     {name: 'Blogs', link: "blogs"},

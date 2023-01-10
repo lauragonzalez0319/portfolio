@@ -45,12 +45,18 @@ function App() {
       <CssBaseline />
       <NavBar colorPicked={colorPicked}/>
       <Offset />
-      <CompactPicker color={colorPicked} onChange={handleColorChange} style={{width: "100%"}}/>
-      <Typography variant="h5" align="center" sx={{color: "white", backgroundColor: colorPicked, width: "75%", float: "left", opacity: 0.5, padding: "0.5em"}}>
-        Click on a color to style my portfolio! Welcome to your own custom UX experience borne out of my indecisiveness for this color palettes.
-        <br/>
-        You've picked {colorPicked}.
-      </Typography>
+      <Grid container sx={{backgroundColor: colorPicked}}>
+        <Grid item xs={9}>
+          <Typography variant="h5" align="center" sx={{color: "black", width: "75%", float: "left", padding: "0.5em"}}>
+            Click on a color to style my portfolio! Welcome to your own custom UX experience born out of my indecisiveness for this color palettes.
+            <br/>
+            You've picked {colorPicked}.
+          </Typography>
+        </Grid>
+        <Grid item xs={3}>
+          <CompactPicker color={colorPicked} onChange={handleColorChange} />
+        </Grid>
+      </Grid>
       < br/>
       <Router>
         <Routes>
@@ -58,7 +64,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects colorPicked={colorPicked}/>} />
           <Route path="/blogs" element={<Blogs blogs={blogs} colorPicked={colorPicked} />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact colorPicked={colorPicked} />} />
         </Routes>
       </Router>
       </ThemeProvider>

@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import React, { useRef } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -8,40 +8,25 @@ import EmailIcon from '@mui/icons-material/Email';
 import SendIcon from '@mui/icons-material/Send';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject:'',
-    message: ''
-  })
-
-  function handleChange(event) {
-    setFormData({value: event.target.value})
-  }
-
-  function resetForm(){
-    setFormData({name: '', email: '',subject:'', message: ''})
-  }
+export default function Contact({ colorPicked }) {
+  const form = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setFormData();
-    axios({
-      method: "POST", 
-      url:"/send", 
-      data:  this.state
-    }).then((response)=>{
-      if (response.data.status === 'success'){
-          alert("Message Sent."); 
-          this.resetForm()
-      }else if(response.data.status === 'fail'){
-          alert("Message failed to send.")
-      }
-    })
-    resetForm();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      name: data.get('name'),
+      email: data.get('email'),
+      message: data.get('message'),
+    });
+    emailjs.sendForm('service_wfs3ygy', 'template_95sniwc', form.current, '0RvDxI5uhWp9Uh2a4')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
   };
 
   return (
@@ -54,7 +39,7 @@ export default function Contact() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, backgroundColor:  colorPicked }}>
             <EmailIcon />
           </Avatar>
           <Typography align="center" variant="h5">
@@ -63,47 +48,42 @@ export default function Contact() {
           <Typography align="center" variant="h7">
             Or send an email to lauragonzalez0319@gmail.com the old fashioned way. 
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" ref={form} noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="Name"
+                  margin="normal"
                   required
                   fullWidth
+                  id="name"
                   label="Name"
+                  name="name"
+                  autoComplete="name"
                   autoFocus
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  label="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  label="Your Email Address"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  required
-                  fullWidth
-                  multiline
-                  id="standard-multiline-flexible"
-                  label="Message"
-                  value={formData.message}
-                  onChange={handleChange}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="message"
+                    label="Message"
+                    name="message"
+                    autoComplete="message"
+                    autoFocus
                 />
               </Grid>
             </Grid>
@@ -112,12 +92,9 @@ export default function Contact() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2, backgroundColor: "black" }}
-              className="button"
             >
-              <span>
               Send
               <SendIcon />
-              </span>
             </Button>
           </Box>
         </Box>

@@ -51,11 +51,11 @@ function Projects({ colorPicked }) {
       <Card sx={{ maxWidth: 450, backgroundColor: colorPicked }}>
         <CardMedia
           sx={{ height: 300 }}
-          image="/floMind.jpeg"
+          image="/floMinder.png"
         />
         <CardContent>
           <Typography align="center" gutterBottom variant="h4" component="div">
-            FloMind
+            FloMinder
           </Typography>
           <Typography sx={{fontStyle: 'italic' }} align="center" gutterBottom variant="h5" component="div">
             Womxn's Health App
@@ -65,13 +65,13 @@ function Projects({ colorPicked }) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button href="https://www.loom.com/share/64d75ccfa8d148ca8431fe8bc6af4483" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
-          <Button href="https://github.com/lauragonzalez0319/flomind" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
+          <Button href="https://www.loom.com/share/64d75ccfa8d148ca8431fe8bc6af4483" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
+          <Button href="https://github.com/lauragonzalez0319/flomind" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
           <ExpandMore
-          expand={floExpanded}
-          onClick={handleFloExpandClick}
-          aria-expanded={floExpanded}
-          aria-label="show more"
+            expand={floExpanded}
+            onClick={handleFloExpandClick}
+            aria-expanded={floExpanded}
+            aria-label="show more"
           >
           <ExpandMoreIcon sx={{color: "white", backgroundColor: "black"}} />
         </ExpandMore>
@@ -108,8 +108,8 @@ function Projects({ colorPicked }) {
           </Typography>
         </CardContent>
         <CardActions id="actions">
-          <Button href="https://www.loom.com/share/49f16be348a24c52ac8ca7da6cb361ec" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
-          <Button href="https://github.com/lauragonzalez0319/dog-tinder" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
+          <Button href="https://www.loom.com/share/49f16be348a24c52ac8ca7da6cb361ec" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
+          <Button href="https://github.com/lauragonzalez0319/dog-tinder" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
           <ExpandMore
           expand={tinExpanded}
           onClick={handleTinExpandClick}
@@ -151,7 +151,7 @@ function Projects({ colorPicked }) {
           </Typography>
         </CardContent>
         <CardActions id="actions">
-          <Button href="https://github.com/nickwarren47/phase-3-sinatra-react-project" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
+          <Button href="https://github.com/nickwarren47/phase-3-sinatra-react-project" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
           <ExpandMore
           expand={starExpanded}
           onClick={handleStarExpandClick}
@@ -193,8 +193,8 @@ function Projects({ colorPicked }) {
           </Typography>
         </CardContent>
         <CardActions id="actions">
-          <Button href="https://www.loom.com/share/97f092b2d3a14136aaeacb39599d416c" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
-          <Button href="https://github.com/kgicheha/recipe-finder" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
+          <Button href="https://www.loom.com/share/97f092b2d3a14136aaeacb39599d416c" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Watch Demo</Button>
+          <Button href="https://github.com/kgicheha/recipe-finder" target="_blank" rel="noreferrer" size="small" sx={{backgroundColor: "black", color: "white"}}>Code Repo</Button>
           <ExpandMore
             expand={forkExpanded}
             onClick={handleForkExpandClick}

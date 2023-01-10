@@ -3,11 +3,21 @@ body {
   font-family: 'Bogart', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: black !important; */
 }
 
 code {
   font-family: 'Bogart', sans-serif;
+}
+
+#center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #typewriter-nav {
@@ -17,13 +27,7 @@ code {
 #typewriter-about {
   font-size: 2.5em;
   display: block;
-  margin-left: 35%;
-}
-
-#center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20%;
 }
 
 .button span {

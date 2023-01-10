@@ -93,24 +93,26 @@ function About() {
   return (
     <div>
       <br/>
-      <Container id="typewriter-about">
-        <Typewriter
-          onInit={(typewriter) => {
-            typewriter.typeString("I love coding, but I also love traveling.")
-              .pauseFor(2500)
-              .deleteChars(10)
-              .typeString(interests[0]).pauseFor(2500).deleteChars(interests[0].length).pauseFor(2500)
-              .typeString(interests[1]).pauseFor(2500).deleteChars(interests[1].length).pauseFor(2500)
-              .typeString(interests[2]).pauseFor(2500).deleteChars(interests[2].length).pauseFor(2500)
-              .typeString(interests[3]).pauseFor(2500).deleteChars(interests[3].length).pauseFor(2500)
-              .typeString(interests[4]).pauseFor(2500).deleteChars(interests[4].length).pauseFor(2500)
-              .typeString(interests[5]).pauseFor(2500).deleteChars(interests[5].length).pauseFor(2500)
-              .typeString(interests[6]).pauseFor(2500).deleteChars(interests[6].length).pauseFor(3000)
-              .start();
-          }}
-          options={{ loop: true }}
-        />
-      </Container>
+      {/* <Container id="typewriter-about"> */}
+        <div id="typewriter-about">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter.typeString("I love coding, but I also love traveling.")
+                .pauseFor(2500)
+                .deleteChars(10)
+                .typeString(interests[0]).pauseFor(2500).deleteChars(interests[0].length).pauseFor(2500)
+                .typeString(interests[1]).pauseFor(2500).deleteChars(interests[1].length).pauseFor(2500)
+                .typeString(interests[2]).pauseFor(2500).deleteChars(interests[2].length).pauseFor(2500)
+                .typeString(interests[3]).pauseFor(2500).deleteChars(interests[3].length).pauseFor(2500)
+                .typeString(interests[4]).pauseFor(2500).deleteChars(interests[4].length).pauseFor(2500)
+                .typeString(interests[5]).pauseFor(2500).deleteChars(interests[5].length).pauseFor(2500)
+                .typeString(interests[6]).pauseFor(2500).deleteChars(interests[6].length).pauseFor(3000)
+                .start();
+            }}
+            options={{ loop: true }}
+          />
+        </div>
+      {/* </Container> */}
       <br/>
       <Box id="center" sx={{ width: "90%", height: "50%", overflowY: 'scroll' }}>
         <ImageList
