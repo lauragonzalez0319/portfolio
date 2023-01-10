@@ -19,6 +19,10 @@ function App() {
   const mediumUrl = "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@lauragonzalez0319";
   const [blogs, setBlogs] = useState(null);
   const [colorPicked, setColorPicked] = useState("#94a1b2")
+
+  var ghpages = require('gh-pages');
+
+  ghpages.publish('dist', function(err) {});
   
   useEffect(() => {
     axios.get(mediumUrl)
