@@ -25,11 +25,11 @@ function NavBar({ colorPicked }) {
   const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
   const pages = [
-    {name: 'Home', link: "/"}, 
-    {name: 'About', link: "about"},
-    {name: 'Projects', link: "projects"},
-    {name: 'Blogs', link: "blogs"},
-    {name: 'Contact', link: "contact"}
+    {name: 'Home', link: "/portfolio"}, 
+    {name: 'About', link: "/portfolio/about"},
+    {name: 'Projects', link: "/portfolio/projects"},
+    {name: 'Blogs', link: "/portfolio/blogs"},
+    {name: 'Contact', link: "/portfolio/contact"}
   ]; 
   
   const drawerWidth = 77;

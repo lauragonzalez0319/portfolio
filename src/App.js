@@ -60,11 +60,11 @@ function App() {
       < br/>
       <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects colorPicked={colorPicked}/>} />
-          <Route path="/blogs" element={<Blogs blogs={blogs} colorPicked={colorPicked} />} />
-          <Route path="/contact" element={<Contact colorPicked={colorPicked} />} />
+          <Route path="/portfolio" element={<Home />} />
+          <Route path="/portfolio/about" element={<About />} />
+          <Route path="/portfolio/projects" element={<Projects colorPicked={colorPicked}/>} />
+          <Route path="/portfolio/blogs" element={<Blogs blogs={blogs} colorPicked={colorPicked} />} />
+          <Route path="/portfolio/contact" element={<Contact colorPicked={colorPicked} />} />
         </Routes>
       </Router>
       </ThemeProvider>
