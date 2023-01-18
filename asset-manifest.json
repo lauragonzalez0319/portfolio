@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lauragonzalez0319.github.io/portfolio/static/css/main.2eb98511.css",
+    "main.js": "/lauragonzalez0319.github.io/portfolio/static/js/main.4b7a83fb.js",
+    "index.html": "/lauragonzalez0319.github.io/portfolio/index.html",
+    "main.2eb98511.css.map": "/lauragonzalez0319.github.io/portfolio/static/css/main.2eb98511.css.map",
+    "main.4b7a83fb.js.map": "/lauragonzalez0319.github.io/portfolio/static/js/main.4b7a83fb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2eb98511.css",
+    "static/js/main.4b7a83fb.js"
+  ]
+}
