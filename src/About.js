@@ -3,77 +3,76 @@ import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import Typewriter from 'typewriter-effect';
-import Container from '@mui/material/Container';
 
 function About() {
   const itemData = [
     {
-      img: '/about-1.jpeg',
+      img: require('./assets/about-1.jpeg'),
       rows: 2,
       cols: 2,
     },
     {
-      img: '/about-9.jpeg'
+      img: require('./assets/about-9.jpeg')
     },
     {
-      img: '/about-4.jpeg'
+      img: require('./assets/about-4.jpeg')
     },
     {
-      img: '/about-5.jpeg',
+      img: require('./assets/about-5.jpeg'),
       cols: 2,
     },
     {
-      img: '/about-6.jpeg',
+      img: require('./assets/about-6.jpeg'),
       title: 'Hats',
       cols: 2,
     },
     {
-      img: '/about-7.jpeg',
+      img: require('./assets/about-7.jpeg'),
       rows: 2,
       cols: 2,
     },
     {
-      img: '/about-8.jpeg'
+      img: require('./assets/about-8.jpeg')
     },
     {
-      img: '/about-3.jpeg'
+      img: require('./assets/about-3.jpeg')
     },
     {
-      img: '/about-10.jpeg',
+      img: require('./assets/about-10.jpeg'),
       rows: 2,
       cols: 2,
     },
     {
-      img: '/about-11.jpeg'
+      img: require('./assets/about-11.jpeg')
     },
     {
-      img: '/about-19.JPG'
+      img: require('./assets/about-19.JPG')
     },
     {
-      img: '/about-13.jpeg',
+      img: require('./assets/about-13.jpeg'),
       cols: 2,
     },
     {
-      img: '/about-14.jpeg',
+      img: require('./assets/about-14.jpeg'),
       rows: 2,
       cols: 2,
     },
     { 
-      img: '/about-15.jpg' 
+      img: require('./assets/about-15.jpg') 
     },
     { 
-      img: '/about-16.jpeg' 
+      img: require('./assets/about-16.jpeg')
     },
     {
-      img: '/about-17.jpeg',
+      img: require('./assets/about-17.jpeg'),
       cols: 2,
     },
     {
-      img: '/about-18.JPG',
+      img: require('./assets/about-18.JPG'),
       cols: 2,
     },
     {
-      img: '/about-12.jpeg',
+      img: require('./assets/about-12.jpeg'),
       cols: 2
     }
   ];
@@ -93,7 +92,6 @@ function About() {
   return (
     <div>
       <br/>
-      {/* <Container id="typewriter-about"> */}
         <div id="typewriter-about">
           <Typewriter
             onInit={(typewriter) => {
@@ -112,7 +110,6 @@ function About() {
             options={{ loop: true }}
           />
         </div>
-      {/* </Container> */}
       <br/>
       <Box id="center" sx={{ width: "90%", height: "50%", overflowY: 'scroll' }}>
         <ImageList

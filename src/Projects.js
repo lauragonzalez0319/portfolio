@@ -51,7 +51,7 @@ function Projects({ colorPicked }) {
       <Card sx={{ maxWidth: 450, backgroundColor: colorPicked }}>
         <CardMedia
           sx={{ height: 300 }}
-          image="/floMinder.png"
+          image={require('./assets/floMinder.png')}
         />
         <CardContent>
           <Typography align="center" gutterBottom variant="h4" component="div">
@@ -94,7 +94,7 @@ function Projects({ colorPicked }) {
         <Card sx={{ maxWidth: 450, backgroundColor: colorPicked }}>
         <CardMedia
           sx={{ height: 300 }}
-          image="/tindog.jpg"
+          image={require('./assets/tindog.jpg')}
         />
         <CardContent>
           <Typography align="center" gutterBottom variant="h4" component="div">
@@ -137,7 +137,7 @@ function Projects({ colorPicked }) {
         <Card sx={{ maxWidth: 450, backgroundColor: colorPicked }}>
         <CardMedia
           sx={{ height: 300 }}
-          image="/forge-your-destiny.jpg"
+          image={require('./assets/forge-your-destiny.jpg')}
         />
         <CardContent>
           <Typography align="center" gutterBottom variant="h4" component="div">
@@ -179,7 +179,7 @@ function Projects({ colorPicked }) {
         <Card sx={{ maxWidth: 450, backgroundColor: colorPicked }}>
         <CardMedia
           sx={{ height: 300 }}
-          image="/fork-it.png"
+          image={require('./assets/fork-it.png')}
         />
         <CardContent>
           <Typography align="center" gutterBottom variant="h4" component="div">

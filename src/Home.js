@@ -14,14 +14,14 @@ function Home() {
           component="img"
           height="500"
           width= "300"
-          image="/headshot.jpeg"
+          image={require('./assets/headshot.jpeg')}
           alt="Laura Gonzalez headshot"
         />
         <CardMedia
           component="img"
           height="400"
           width= "300"
-          image="/skills.png"
+          image={require('./assets/skills.png')}
           alt="skills"
         />
         </Box>
