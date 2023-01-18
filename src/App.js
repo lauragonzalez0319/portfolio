@@ -20,10 +20,6 @@ function App() {
   const [blogs, setBlogs] = useState(null);
   const [colorPicked, setColorPicked] = useState("#94a1b2")
 
-  var ghpages = require('gh-pages');
-
-  ghpages.publish('dist', function(err) {});
-  
   useEffect(() => {
     axios.get(mediumUrl)
     .then(res => {
